@@ -1,0 +1,18 @@
+import { FactotumLauncher, ITask } from 'factotum';
+
+export function getGraph():string[] {
+  return [
+     {{#each graphs}}
+      "{{this}}",
+     {{/each}}
+  ]
+}
+
+
+
+export function LauncherManager(info: ITask[]) {
+  return (target: Function) => {
+    FactotumLauncher.getInstance().setGraphInner(getGraph())
+    FactotumLauncher.getInstance().addTasks(info);
+  };
+}
