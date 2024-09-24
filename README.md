@@ -1,10 +1,12 @@
 # Factotum
 Factotum 是专门为HarmonyOS设计的任务调度管理框架，能够在编译时构建出有向无环图，同时也拥有任务循环依赖（成环问题）的发现能力，助力大型项目的任务调度
 
+原理解析：https://juejin.cn/post/7418072992846512138
+
 
 # 使用指南
 Factotum 提供注解@Launcher，用于修饰一个任务类，launchName为当前任务的名字，dependencies为依赖任务的数组，无依赖则为null，同时提供ITask接口用于后期任务调度运行，例子如下（详细例子请查看entry目录下例子）：
-原理解析：https://juejin.cn/post/7418072992846512138
+
 ## 环境依赖
 oh-package.json5 中添加依赖 
 ```
