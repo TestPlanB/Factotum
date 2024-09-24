@@ -1,9 +1,9 @@
 {
-  "name": "factotum",
+  "name": "@pika/factotum",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "Factotum 是一款提供编译时拓扑排序结果导向的任务调度框架",
   "main": "Index.ets",
-  "author": "",
+  "author": "pika",
   "license": "Apache-2.0",
   "packageType": "InterfaceHar",
   "dependencies": {
