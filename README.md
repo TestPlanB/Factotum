@@ -4,6 +4,18 @@ Factotum 是专门为HarmonyOS设计的任务调度管理框架，能够在编�
 
 # 使用指南
 Factotum 提供注解@Launcher，用于修饰一个任务类，launchName为当前任务的名字，dependencies为依赖任务的数组，无依赖则为null，同时提供ITask接口用于后期任务调度运行，例子如下（详细例子请查看entry目录下例子）：
+## 环境依赖
+oh-package.json5 中添加依赖 @pika/factotum 1.0.0 
+
+## 添加编译时插件
+在项目entry下hvigorfile.ts 中添加factotumHapPlugin任务依赖
+```
+export default {
+    system: hapTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
+    plugins:[factotumHapPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
+}
+```
+
 ## @Launcher修饰实现ITask的类
 ```
 @Launcher({
@@ -29,12 +41,5 @@ export class Launcher{
 
 }
 ```
-## 添加编译时插件
-在项目entry下hvigorfile.ts 中添加factotumHapPlugin任务依赖
-```
-export default {
-    system: hapTasks,  /* Built-in plugin of Hvigor. It cannot be modified. */
-    plugins:[factotumHapPlugin()]         /* Custom plugin to extend the functionality of Hvigor. */
-}
-```
+
 
